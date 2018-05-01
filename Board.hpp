@@ -2,23 +2,25 @@
 #include <iostream>
 #include "IllegalCoordinateException.hpp"
 #include "IllegalCharException.hpp"
-#include "GameBoard.hpp"
+#include "Cell.hpp"
 using namespace std;
 
 class Board{
     private:
-        GameBoard* game;
+        /* Variable */
+        Cell** board;
+        int rowcolumn;
     public:
-    /* Constructor */
-    Board(int);
-    Board(const Board&);
-    /* Destructor */
-    ~Board();
-    /* IOstream */
-    friend ostream& operator<<(ostream&, Board const&);
-    /* Subscript */
-    GameBoard& operator[](Pair);
-    /* Assignment */
-    Board& operator=(char c);
-    Board& operator=(const Board&);
+        /* Constructor */
+        Board(int);
+        Board(const Board&);
+        /* Destructor */
+        ~Board();
+        /* IOstream */
+        friend ostream& operator<<(ostream&, Board const&);
+        /* Subscript */
+        Cell& operator[](Pair);
+        /* Assignment */
+        Board& operator=(char c);
+        Board& operator=(const Board&);
 };
