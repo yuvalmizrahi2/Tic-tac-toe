@@ -47,6 +47,12 @@ Cell& Board::operator[](Pair pair)
         throw IllegalCoordinateException(pair);
     return board[pair.x][pair.y];
 }
+const char& Board::operator[](Pair pair) const
+{
+    if (pair.x >= rowcolumn || pair.x < 0 || pair.y >= rowcolumn || pair.y < 0)
+        throw IllegalCoordinateException(pair);
+    return board[pair.x][pair.y].cell;
+}
 /* Assignment */
 Board& Board::operator=(char c)
 {
