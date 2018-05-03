@@ -4,6 +4,11 @@ IllegalCoordinateException::IllegalCoordinateException(const Pair& illegalpair)
 {
     pair = new Pair(illegalpair);
 }
+/* Destructor */
+IllegalCoordinateException::~IllegalCoordinateException()
+{
+    delete pair;
+}
 /* Funtions */
 string IllegalCoordinateException::theCoordinate() const
 {

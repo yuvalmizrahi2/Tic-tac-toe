@@ -12,6 +12,8 @@ class IllegalCoordinateException
     public:
         /* Constructor */
         IllegalCoordinateException(const Pair&);
+        /* Destructor */
+        ~IllegalCoordinateException();
         /* Funtions */
         string theCoordinate() const;
 };
