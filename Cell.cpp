@@ -27,3 +27,8 @@ Cell& Cell::operator=(const Cell& c)
     cell = c.cell;
     return *this;
 }
+
+Cell::operator char()
+{
+    return cell;
+}

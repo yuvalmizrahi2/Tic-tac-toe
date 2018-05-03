@@ -43,15 +43,17 @@ ostream& operator<<(ostream& os, Board const& obj)
 /* Subscript */
 Cell& Board::operator[](Pair pair)
 {
+    cout << "mutator" << endl;
     if (pair.x >= rowcolumn || pair.x < 0 || pair.y >= rowcolumn || pair.y < 0)
         throw IllegalCoordinateException(pair);
     return board[pair.x][pair.y];
 }
-const char& Board::operator[](Pair pair) const
+Cell Board::operator[](Pair pair) const
 {
+    cout << "accessor" << endl;
     if (pair.x >= rowcolumn || pair.x < 0 || pair.y >= rowcolumn || pair.y < 0)
         throw IllegalCoordinateException(pair);
-    return board[pair.x][pair.y].cell;
+    return board[pair.x][pair.y];
 }
 /* Assignment */
 Board& Board::operator=(char c)

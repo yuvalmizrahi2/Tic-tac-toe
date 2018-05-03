@@ -20,7 +20,7 @@ class Board{
         friend ostream& operator<<(ostream&, Board const&);
         /* Subscript */
         Cell& operator[](Pair);
-        const char& operator[](Pair) const;
+        Cell operator[](Pair) const;
         /* Assignment */
         Board& operator=(char c);
         Board& operator=(const Board&);

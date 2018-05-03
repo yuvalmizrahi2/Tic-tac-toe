@@ -16,4 +16,6 @@ class Cell{
         /* Assignment */
         Cell& operator=(char c);
         Cell& operator=(const Cell& c);
+
+        operator char();
 };
