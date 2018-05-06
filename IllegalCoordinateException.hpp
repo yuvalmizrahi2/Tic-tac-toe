@@ -1,6 +1,6 @@
 #pragma once
 #include <exception>
-#include "Pair.hpp"
+#include "Coordinate.hpp"
 #include <sstream>
 using namespace std;
 
@@ -8,10 +8,10 @@ class IllegalCoordinateException
 {
     private:
         /* Variable */
-        Pair* pair;
+        Coordinate* pair;
     public:
         /* Constructor */
-        IllegalCoordinateException(const Pair&);
+        IllegalCoordinateException(const Coordinate&);
         /* Destructor */
         ~IllegalCoordinateException();
         /* Funtions */

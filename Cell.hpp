@@ -1,5 +1,5 @@
 #pragma once
-#include "Pair.hpp"
+#include "Coordinate.hpp"
 #include <iostream>
 #include "IllegalCharException.hpp"
 using namespace std;

@@ -1,8 +1,8 @@
 #include "IllegalCoordinateException.hpp"
 /* Constructor */
-IllegalCoordinateException::IllegalCoordinateException(const Pair& illegalpair)
+IllegalCoordinateException::IllegalCoordinateException(const Coordinate& illegalpair)
 {
-    pair = new Pair(illegalpair);
+    pair = new Coordinate(illegalpair);
 }
 /* Destructor */
 IllegalCoordinateException::~IllegalCoordinateException()

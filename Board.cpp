@@ -41,13 +41,13 @@ ostream& operator<<(ostream& os, Board const& obj)
     return os;
 }
 /* Subscript */
-Cell& Board::operator[](Pair pair)
+Cell& Board::operator[](Coordinate pair)
 {
     if (pair.x >= rowcolumn || pair.x < 0 || pair.y >= rowcolumn || pair.y < 0)
         throw IllegalCoordinateException(pair);
     return board[pair.x][pair.y];
 }
-Cell Board::operator[](Pair pair) const
+Cell Board::operator[](Coordinate pair) const
 {
     if (pair.x >= rowcolumn || pair.x < 0 || pair.y >= rowcolumn || pair.y < 0)
         throw IllegalCoordinateException(pair);
@@ -80,4 +80,9 @@ Board& Board::operator=(const Board& c)
         }
     }
     return *this;
+}
+/* Get */
+const int Board::size()
+{
+    return rowcolumn;
 }

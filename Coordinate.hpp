@@ -1,6 +1,6 @@
 #pragma once
 
-class Pair{
+class Coordinate{
     public:
         /* Variable */
         int x;

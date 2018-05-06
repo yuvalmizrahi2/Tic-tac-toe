@@ -19,9 +19,11 @@ class Board{
         /* IOstream */
         friend ostream& operator<<(ostream&, Board const&);
         /* Subscript */
-        Cell& operator[](Pair);
-        Cell operator[](Pair) const;
+        Cell& operator[](Coordinate);
+        Cell operator[](Coordinate) const;
         /* Assignment */
         Board& operator=(char c);
         Board& operator=(const Board&);
+        /* Get */
+        const int size();
 };
