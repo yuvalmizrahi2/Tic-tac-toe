@@ -16,6 +16,7 @@ class Cell{
         /* Assignment */
         Cell& operator=(char c);
         Cell& operator=(const Cell& c);
-
+        /* Comparison operators */
+        friend bool operator==(const Cell c1 , const char c2);
         operator char();
 };
