@@ -17,7 +17,7 @@ ostream& operator<<(ostream& os, Cell const& obj)
 /* Assignment */
 Cell& Cell::operator=(char c)
 {
-    if(c != 'X' && c != 'O')
+    if(c != 'X' && c != 'O' && c != '.')
         throw IllegalCharException(c);
     cell = c;
     return *this;
