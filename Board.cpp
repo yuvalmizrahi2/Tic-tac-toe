@@ -72,6 +72,7 @@ Board& Board::operator=(char c)
 }
 Board& Board::operator=(const Board& c)
 {
+    rowcolumn = c.rowcolumn;
     for(int i = 0 ; i < c.rowcolumn; i++)
     {
        for(int j = 0; j < c.rowcolumn; j++)
