@@ -1,9 +1,6 @@
 CXX=g++
 CXXFLAGS=-Wall -Werror -Wvla
 
-all: Board.o IllegalCharException.o IllegalCoordinateException.o Coordinate.o Cell.o
-	$(CXX) $(CXXFLAGS) Board.o IllegalCharException.o IllegalCoordinateException.o Coordinate.o Cell.o
-
 Board.o: Board.cpp Board.h
 	$(CXX) $(CXXFLAGS) -c Board.cpp -o Board.o
 
