@@ -86,6 +86,9 @@ Board& Board::operator=(const Board& c)
             temp[i][j] = c.board[i][j];
         }
     }
+    for(int i = 0 ; i < rowcolumn ; i++)
+        delete board[i];
+    delete board;
     board = temp;
     return *this;
 }
