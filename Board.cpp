@@ -1,4 +1,4 @@
-#include "Board.hpp"
+#include "Board.h"
 /* Constructor */
 Board::Board(int number)
 {
