@@ -90,7 +90,7 @@ Board& Board::operator=(const Board& c)
             temp[i][j] = c.board[i][j];
         }
     }
-    //free2d();
+    free2d();
     board = temp;
     return *this;
 }
