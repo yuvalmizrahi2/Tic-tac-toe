@@ -1,5 +1,5 @@
-CXX=g++
-CXXFLAGS=-Wall -Werror -Wvla
+CXX=clang++-5.0
+CXXFLAGS=-std=c++17 
 
 all: Board.o IllegalCharException.o IllegalCoordinateException.o Coordinate.o Cell.o
 
