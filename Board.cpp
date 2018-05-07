@@ -17,6 +17,10 @@ Board::Board(const Board& b)
     for(int i = 0 ; i < rowcolumn ; i++)
     {
         temp[i] = new Cell[rowcolumn];
+        for(int j = 0; j < rowcolumn; j++)
+        {
+            temp[i][j] = b.board[i][j];
+        }
     }
     board = temp;
 }
@@ -73,13 +77,16 @@ Board& Board::operator=(char c)
 Board& Board::operator=(const Board& c)
 {
     rowcolumn = c.rowcolumn;
-    for(int i = 0 ; i < c.rowcolumn; i++)
+    Cell** temp = new Cell*[rowcolumn];
+    for(int i = 0 ; i < rowcolumn ; i++)
     {
-       for(int j = 0; j < c.rowcolumn; j++)
+        temp[i] = new Cell[rowcolumn];
+        for(int j = 0; j < rowcolumn; j++)
         {
-            board[i][j] = c.board[i][j];
+            temp[i][j] = c.board[i][j];
         }
     }
+    board = temp;
     return *this;
 }
 /* Get */
