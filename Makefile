@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 CXX=G++
 CXXFLAGS=-std=c++17 -Wall -Werror -Wvla
+=======
+CXX=clang++-5.0
+CXXFLAGS=-std=c++11 
+>>>>>>> 5964e1ca4b1a5742c4b6d083e47cf5453ad8ffd9
 
 all: Board.o IllegalCharException.o IllegalCoordinateException.o Coordinate.o Cell.o
 
