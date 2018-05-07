@@ -68,7 +68,7 @@ Board& Board::operator=(char c)
 }
 Board& Board::operator=(const Board& c)
 {
-    // this->~Board();
+    this->~Board();
     rowcolumn = c.rowcolumn;
     board = new Cell*[rowcolumn];
     for(int i = 0 ; i < rowcolumn ; i++)
