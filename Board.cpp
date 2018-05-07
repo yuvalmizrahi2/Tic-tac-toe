@@ -1,8 +1,7 @@
 #include "Board.h"
 /* Constructor */
-Board::Board(int number)
+Board::Board(int number) : rowcolumn(number)
 {
-    rowcolumn = number;
     board = new Cell*[rowcolumn];
     for(int i = 0 ; i < rowcolumn ; i++)
     {
@@ -69,7 +68,7 @@ Board& Board::operator=(char c)
 }
 Board& Board::operator=(const Board& c)
 {
-    this->~Board();
+    // this->~Board();
     rowcolumn = c.rowcolumn;
     board = new Cell*[rowcolumn];
     for(int i = 0 ; i < rowcolumn ; i++)
