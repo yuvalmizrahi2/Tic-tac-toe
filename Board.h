@@ -16,6 +16,7 @@ class Board{
         Board(const Board&);
         /* Destructor */
         ~Board();
+        void free2d();
         /* IOstream */
         friend ostream& operator<<(ostream&, Board const&);
         /* Subscript */

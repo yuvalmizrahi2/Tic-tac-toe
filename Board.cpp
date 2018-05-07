@@ -25,11 +25,15 @@ Board::Board(const Board& b)
     board = temp;
 }
 /* Destructor */
-Board::~Board()
+void Board::free2d()
 {
     for(int i = 0 ; i < rowcolumn ; i++)
-        delete board[i];
-    delete board;
+        delete[] board[i];
+    delete[] board;
+}
+Board::~Board()
+{
+    free2d();
 }
 /* IOstream */
 ostream& operator<<(ostream& os, Board const& obj)
@@ -86,7 +90,7 @@ Board& Board::operator=(const Board& c)
             temp[i][j] = c.board[i][j];
         }
     }
-    this->~Board();
+    free2d();
     board = temp;
     return *this;
 }
