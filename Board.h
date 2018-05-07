@@ -21,7 +21,6 @@ class Board{
         friend ostream& operator<<(ostream&, Board const&);
         /* Subscript */
         Cell& operator[](Coordinate);
-        Cell operator[](Coordinate) const;
         /* Assignment */
         Board& operator=(char c);
         Board& operator=(const Board&);

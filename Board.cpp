@@ -3,26 +3,24 @@
 Board::Board(int number)
 {
     rowcolumn = number;
-    Cell** temp = new Cell*[rowcolumn];
+    board = new Cell*[rowcolumn];
     for(int i = 0 ; i < rowcolumn ; i++)
     {
-        temp[i] = new Cell[rowcolumn];
+        board[i] = new Cell[rowcolumn];
     }
-    board = temp;
 }
 Board::Board(const Board& b)
 {
     rowcolumn = b.rowcolumn;
-    Cell** temp = new Cell*[rowcolumn];
+    board = new Cell*[rowcolumn];
     for(int i = 0 ; i < rowcolumn ; i++)
     {
-        temp[i] = new Cell[rowcolumn];
+        board[i] = new Cell[rowcolumn];
         for(int j = 0; j < rowcolumn; j++)
         {
-            temp[i][j] = b.board[i][j];
+            board[i][j] = b.board[i][j];
         }
     }
-    board = temp;
 }
 /* Destructor */
 void Board::free2d()
@@ -55,12 +53,6 @@ Cell& Board::operator[](Coordinate pair)
         throw IllegalCoordinateException(pair);
     return board[pair.x][pair.y];
 }
-Cell Board::operator[](Coordinate pair) const
-{
-    if (pair.x >= rowcolumn || pair.x < 0 || pair.y >= rowcolumn || pair.y < 0)
-        throw IllegalCoordinateException(pair);
-    return board[pair.x][pair.y];
-}
 /* Assignment */
 Board& Board::operator=(char c)
 {
@@ -80,18 +72,17 @@ Board& Board::operator=(char c)
 }
 Board& Board::operator=(const Board& c)
 {
+    free2d();
     rowcolumn = c.rowcolumn;
-    Cell** temp = new Cell*[rowcolumn];
+    board = new Cell*[rowcolumn];
     for(int i = 0 ; i < rowcolumn ; i++)
     {
-        temp[i] = new Cell[rowcolumn];
+        board[i] = new Cell[rowcolumn];
         for(int j = 0; j < rowcolumn; j++)
         {
-            temp[i][j] = c.board[i][j];
+            board[i][j] = c.board[i][j];
         }
     }
-    free2d();
-    board = temp;
     return *this;
 }
 /* Get */
