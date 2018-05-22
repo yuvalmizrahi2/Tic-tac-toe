@@ -6,6 +6,7 @@
 
 class TicTacToe {
 public:
+    /* Variable */
     int size;
     Board* game;
     Player* win;
@@ -13,6 +14,7 @@ public:
         TicTacToe(int);
     /* Destructor */
         ~TicTacToe();
+    /* Functions */
         Board board() const;
         Player& winner() const;
         void play(Player&, Player&);

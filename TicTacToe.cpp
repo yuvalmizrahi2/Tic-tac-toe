@@ -1,14 +1,16 @@
 #include "TicTacToe.h"
-
+/* Constructor */
 TicTacToe::TicTacToe(int num)
 {
     game = new Board(num);
     size = num;
 }
+/* Destructor */
 TicTacToe::~TicTacToe()
 {
     delete game;
 }
+/* Functions */
 Board TicTacToe::board() const
 {
     return *game;
@@ -27,48 +29,50 @@ void TicTacToe::play(Player& xPlayer, Player& oPlayer)
     win = &oPlayer;
     while(i < size*size)
     {
-        try{
-        temp = xPlayer.play(*game);
+        try
+        {
+            temp = xPlayer.play(*game);
+            if((*game)[temp] != '.')
+            {
+                win = &oPlayer;
+                break;
+            }
+            (*game)[temp] = 'X';
+            if(checkwin(temp,(*game)))
+            {
+                win = &xPlayer;
+                break;
+            }
+            i++;
         }
         catch(...)
         {
             win = &oPlayer;
             break;
         }
-        if((*game)[temp] != '.')
-        {
-            win = &oPlayer;
-            break;
-        }
-        (*game)[temp] = 'X';
-        if(checkwin(temp,(*game)))
-        {
-            win = &xPlayer;
-            break;
-        }
-        i++;
         if(i != size*size)
         {
-            try{
-            temp = oPlayer.play(*game);
+            try
+            {
+                temp = oPlayer.play(*game);
+                if((*game)[temp] != '.')
+                {
+                    win = &xPlayer;
+                    break;
+                }
+                (*game)[temp] = 'O';
+                if(checkwin(temp,(*game)))
+                {
+                    win = &oPlayer;
+                    break;
+                }
+                i++;
             }
             catch(...)
             {
                 win = &xPlayer;
                 break;
             }
-            if((*game)[temp] != '.')
-            {
-                win = &xPlayer;
-                break;
-            }
-            (*game)[temp] = 'O';
-            if(checkwin(temp,(*game)))
-            {
-                win = &oPlayer;
-                break;
-            }
-            i++;
         }
     }
 }
