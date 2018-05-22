@@ -54,3 +54,5 @@ In order to compile by using the Makefile file - we run the command "make".
 Need to add a main to the completion level.   
 After this just need to run g++ -g *.o *.cpp.  
 To clean all the binary files need to run "clean".
+
+[©Kineret Ruth Nahary](https://github.com/Kineruth)
