@@ -2,7 +2,7 @@
 
 #include "Board.h"
 #include <iostream>
-#include "Player.hpp"
+#include "Player.h"
 
 class TicTacToe {
 public:

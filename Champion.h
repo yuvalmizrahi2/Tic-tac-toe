@@ -1,6 +1,6 @@
 #pragma once
 #include "Coordinate.hpp"
-#include "Player.hpp"
+#include "Player.h"
 #include "Board.h"
 
 class Champion: public Player {
