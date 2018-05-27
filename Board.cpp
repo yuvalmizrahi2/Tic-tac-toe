@@ -117,10 +117,14 @@ int Board::size() const
     return rowcolumn;
 }
 /* Drow */
-void Board::draw(int sizearr)
+string Board::draw(int sizearr)
 {
+    int length = namefile.length() - 1;
+    namefile[length] = 'm';
+    namefile[length-1] = 'p';
+    namefile[length-2] = 'p';
     const int size = sizearr;
-    ofstream imageFile("cpp.ppm", ios::out | ios::binary);
+    ofstream imageFile(namefile, ios::out | ios::binary);
     imageFile << "P6" << endl << size <<" " << size << endl << 255 << endl;
     RGB** image;
     image = new RGB*[size];
@@ -158,6 +162,7 @@ void Board::draw(int sizearr)
     for(int i = 0 ; i < size ; i++)
         delete[] image[i];
     delete[] image;
+    return namefile;
 }
 void Board::drawboard(RGB** image , int size)
 {

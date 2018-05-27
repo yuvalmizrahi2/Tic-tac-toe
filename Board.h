@@ -32,7 +32,7 @@ class Board{
         /* Get */
         int size() const;
         /* Drow */
-        void draw(int);
+        string draw(int);
         void drawboard(RGB** , int);
         void drawX(RGB** , int , int , int);
         void drawO(RGB** , int , int , int);
