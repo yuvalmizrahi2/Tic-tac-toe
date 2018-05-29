@@ -117,7 +117,7 @@ int Board::size() const
 /* Drow */
 string Board::draw(int sizearr)
 {
-    int random = rand() % 1000;
+    int random = rand() % 100000;
     namefile = to_string(random) + ".ppm";
     const int size = sizearr;
     ofstream imageFile(namefile, ios::out | ios::binary);
