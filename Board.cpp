@@ -120,7 +120,7 @@ string Board::draw(int sizearr)
     int random = rand() % 100000;
     namefile = to_string(random) + ".ppm";
     const int size = sizearr;
-    ofstream imageFile(namefile, ios::out | ios::binary);
+    ofstream imageFile("test.ppm", ios::out | ios::binary);
     imageFile << "P6" << endl << size <<" " << size << endl << 255 << endl;
     RGB** image;
     image = new RGB*[size];
