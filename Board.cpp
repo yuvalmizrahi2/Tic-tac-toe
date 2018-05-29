@@ -48,10 +48,8 @@ ostream& operator<<(ostream& os, Board const& obj)
 istream& operator>>(istream& input, Board& obj)
 {
     string line;
-    input >> obj.namefile;
-    ifstream infile(obj.namefile);
-    getline(infile, line);
-    obj.rowcolumn = line.size() - 1;
+    cin >> line;
+    obj.rowcolumn = line.size();
     obj.board= new Cell*[obj.rowcolumn];
     for(int i = 0 ; i < obj.rowcolumn ; i++)
     {
@@ -61,7 +59,7 @@ istream& operator>>(istream& input, Board& obj)
             obj.board[i][j] = line[j];
         }
         if(i != obj.rowcolumn-1)
-            getline(infile, line);
+            cin >> line;
     }
     return input;
 }
@@ -119,10 +117,8 @@ int Board::size() const
 /* Drow */
 string Board::draw(int sizearr)
 {
-    int length = namefile.length() - 1;
-    namefile[length] = 'm';
-    namefile[length-1] = 'p';
-    namefile[length-2] = 'p';
+    int random = rand() % 1000;
+    namefile = to_string(random) + ".ppm";
     const int size = sizearr;
     ofstream imageFile(namefile, ios::out | ios::binary);
     imageFile << "P6" << endl << size <<" " << size << endl << 255 << endl;
