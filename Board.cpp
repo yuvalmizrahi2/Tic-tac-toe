@@ -199,7 +199,7 @@ void Board::drawX(RGB** image , int size , int k , int j)
 void Board::drawO(RGB** image , int size , int k , int j)
 {
     int cell = (size - 20*(rowcolumn-1))/rowcolumn;
-    int r = cell/2 , x_centre = (cell+20)*k+r , y_centre = (cell+20)*j+r;
+    int r = cell/2 - 1 , x_centre = (cell+20)*k+r , y_centre = (cell+20)*j+r;
     int x = r, y = 0;
     image[x + x_centre][y + y_centre].red = 255;
     image[x + x_centre][y + y_centre].green = 0;
