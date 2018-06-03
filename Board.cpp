@@ -50,17 +50,17 @@ istream& operator>>(istream& input, Board& obj)
     string line;
     cin >> line;
     obj.rowcolumn = line.size();
-    obj.board= new Cell*[obj.rowcolumn];
+    Board temp(line.size());
     for(int i = 0 ; i < obj.rowcolumn ; i++)
     {
-        obj.board[i] = new Cell[obj.rowcolumn];
         for(int j = 0; j < obj.rowcolumn; j++)
         {
-            obj.board[i][j] = line[j];
+            temp.board[i][j] = line[j];
         }
         if(i != obj.rowcolumn-1)
             cin >> line;
     }
+    obj = temp;
     return input;
 }
 /* Subscript */
