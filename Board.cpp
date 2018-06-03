@@ -49,15 +49,14 @@ istream& operator>>(istream& input, Board& obj)
 {
     string line;
     cin >> line;
-    obj.rowcolumn = line.size();
     Board temp(line.size());
-    for(int i = 0 ; i < obj.rowcolumn ; i++)
+    for(int i = 0 ; i < temp.rowcolumn ; i++)
     {
-        for(int j = 0; j < obj.rowcolumn; j++)
+        for(int j = 0; j < temp.rowcolumn; j++)
         {
             temp.board[i][j] = line[j];
         }
-        if(i != obj.rowcolumn-1)
+        if(i != temp.rowcolumn-1)
             cin >> line;
     }
     obj = temp;
